@@ -46,6 +46,17 @@ export const SearchInput = styled.input`
   }
 `;
 
+export const RegionFilter = styled.select`
+  padding: 1rem;
+
+  background: var(--primary-dark);
+  color: var(--white);
+
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+`;
+
 export const FlagsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
