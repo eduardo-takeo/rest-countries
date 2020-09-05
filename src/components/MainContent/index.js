@@ -15,7 +15,7 @@ import FlagCard from './FlagCard';
 
 function MainContent() {
   const [flags, setFlags] = useState([]);
-  let allFlags = [];
+  const [allFlags, setAllFlags] = useState([]);
 
   useEffect(() => {
     fetchFlags();
@@ -26,7 +26,7 @@ function MainContent() {
       const response = await api.getAllFlags();
 
       setFlags(response.data);
-      allFlags = response.data;
+      setAllFlags(response.data);
     } catch (e) {
       console.error(e);
     }
