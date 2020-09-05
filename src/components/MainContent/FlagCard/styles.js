@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 250px;
@@ -9,12 +9,17 @@ export const Container = styled.div`
   background: var(--primary-dark);
 
   border-radius: 1rem;
-`
+
+  :hover {
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+  }
+`;
 
 export const Image = styled.img`
   width: 100%;
   height: 50%;
-`
+`;
 
 export const DetailsContainer = styled.div`
   padding: 2rem;
@@ -29,4 +34,4 @@ export const DetailsContainer = styled.div`
 
     margin-bottom: 0.5rem;
   }
-`
+`;
