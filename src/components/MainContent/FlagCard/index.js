@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import { Container, DetailsContainer, Image } from './styles'
+import { Container, DetailsContainer, Image } from './styles';
+import NumberMask from '../../../utils/NumberMask';
 
 function FlagCard(country) {
   return (
@@ -8,12 +9,12 @@ function FlagCard(country) {
       <Image src={country.flag.flag} alt={country.flag.name} />
       <DetailsContainer>
         <h2>{country.flag.name}</h2>
-        <p>Population: {country.flag.population}</p>
+        <p>Population: {NumberMask(country.flag.population)}</p>
         <p>Region: {country.flag.region}</p>
         <p>Capital: {country.flag.capital}</p>
       </DetailsContainer>
     </Container>
-  )
+  );
 }
 
-export default FlagCard
+export default FlagCard;
