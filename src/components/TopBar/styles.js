@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   position: fixed;
@@ -7,14 +7,16 @@ export const Container = styled.div`
   height: 6rem;
   padding: 0 2rem;
 
+  z-index: 2;
+
   background-color: var(--primary-dark);
   color: var(--white);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 export const ToggleButton = styled.button`
   font-size: 1rem;
-`
+`;
