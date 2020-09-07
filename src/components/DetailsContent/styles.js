@@ -73,6 +73,7 @@ export const Description = styled.div`
 
 export const BordersContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Border = styled.div`
@@ -83,6 +84,6 @@ export const Border = styled.div`
   display: flex;
   align-items: center;
 
-  padding: 0 1rem;
-  margin-right: 1rem;
+  padding: 1rem;
+  margin: 0 1rem 1rem 0;
 `;
