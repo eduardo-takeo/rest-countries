@@ -19,7 +19,7 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  width: 80%;
+  width: 70%;
   margin-top: 5rem;
 `;
 
