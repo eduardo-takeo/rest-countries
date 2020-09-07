@@ -7,8 +7,9 @@ export const Container = styled.div`
   margin-bottom: 3rem;
 
   background: var(--primary-dark);
-
   border-radius: 1rem;
+
+  cursor: pointer;
 
   :hover {
     transition: all 0.3s ease;

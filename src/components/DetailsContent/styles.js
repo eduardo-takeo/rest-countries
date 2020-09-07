@@ -29,6 +29,8 @@ export const BackButton = styled.button`
   border-radius: 5px;
 
   padding: 1rem 2rem;
+
+  cursor: pointer;
 `;
 
 export const FlagDetailsContainer = styled.div`
@@ -76,6 +78,7 @@ export const BordersContainer = styled.div`
 export const Border = styled.div`
   background: var(--primary-dark);
   border-radius: 5px;
+  cursor: pointer;
 
   display: flex;
   align-items: center;

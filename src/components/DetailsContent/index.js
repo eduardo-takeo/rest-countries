@@ -29,7 +29,7 @@ function DetailsContent() {
 
   useEffect(() => {
     fetchCountryByName();
-  }, []);
+  }, [, countryName]);
 
   async function fetchCountryByName() {
     try {
@@ -65,7 +65,12 @@ function DetailsContent() {
       setBorders(
         response.map((border) => {
           return (
-            <Border key={border.alpha3code}>{border.name}</Border>
+            <Border
+              key={border.alpha3code}
+              onClick={() => history.push(`/${border.name}`)}
+            >
+              {border.name}
+            </Border>
           );
         }),
       );
@@ -77,7 +82,7 @@ function DetailsContent() {
   return (
     <Container>
       <ContentContainer>
-        <BackButton onClick={() => history.goBack()}>
+        <BackButton onClick={() => history.push('/')}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="1x"
