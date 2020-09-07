@@ -15,6 +15,13 @@ const api = {
       .get(`/name/${countryName}`)
       .then((response) => response.data[0]);
   },
+
+  getCountryBorders: (borderInitials) => {
+    const query = borderInitials.join(';');
+    return baseFlags
+      .get(`/alpha?codes=${query}`)
+      .then((response) => response.data);
+  },
 };
 
 export default api;

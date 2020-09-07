@@ -77,6 +77,9 @@ export const Border = styled.div`
   background: var(--primary-dark);
   border-radius: 5px;
 
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+
+  padding: 0 1rem;
   margin-right: 1rem;
 `;

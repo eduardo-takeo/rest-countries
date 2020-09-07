@@ -36,9 +36,7 @@ function DetailsContent() {
       const response = await api.getCountryByName(countryName);
 
       setCountry(response);
-
       setTopLevelDomain(response.topLevelDomain.join(', '));
-
       setCurrencies(
         response.currencies
           .map((currency) => {
@@ -46,7 +44,6 @@ function DetailsContent() {
           })
           .join(', '),
       );
-
       setLanguages(
         response.languages
           .map((language) => {
@@ -55,9 +52,21 @@ function DetailsContent() {
           .join(', '),
       );
 
+      fetchCountryBorders(response.borders);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  async function fetchCountryBorders(borders) {
+    try {
+      const response = await api.getCountryBorders(borders);
+
       setBorders(
-        response.borders.map((border) => {
-          return <Border key={border}>{border}</Border>;
+        response.map((border) => {
+          return (
+            <Border key={border.alpha3code}>{border.name}</Border>
+          );
         }),
       );
     } catch (e) {
