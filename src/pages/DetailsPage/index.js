@@ -2,10 +2,14 @@ import React from 'react';
 
 import { Container } from './styles';
 
+import TopBar from '../../components/TopBar';
+import DetailsContent from '../../components/DetailsContent';
+
 function DetailsPage() {
   return (
     <Container>
-      <h1>Details page</h1>
+      <TopBar />
+      <DetailsContent />
     </Container>
   );
 }

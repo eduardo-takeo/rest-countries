@@ -26,8 +26,8 @@ function MainContent() {
     try {
       const response = await api.getAllFlags();
 
-      setFlags(response.data);
-      setAllFlags(response.data);
+      setFlags(response);
+      setAllFlags(response);
     } catch (e) {
       console.error(e);
     }

@@ -12,9 +12,7 @@ function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/details">
-          <DetailsPage />
-        </Route>
+        <Route path="/:countryName" children={<DetailsPage />} />
         <Route path="/">
           <MainPage />
         </Route>

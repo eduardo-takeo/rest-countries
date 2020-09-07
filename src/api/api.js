@@ -7,7 +7,13 @@ const baseFlags = axios.create({
 
 const api = {
   getAllFlags: () => {
-    return baseFlags.get('/all').then((response) => response);
+    return baseFlags.get('/all').then((response) => response.data);
+  },
+
+  getCountryByName: (countryName) => {
+    return baseFlags
+      .get(`/name/${countryName}`)
+      .then((response) => response.data[0]);
   },
 };
 
