@@ -16,6 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 10px;
   overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
 a,
