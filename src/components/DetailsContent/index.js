@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,6 +18,7 @@ import api from '../../api/api';
 
 function DetailsContent() {
   const { countryName } = useParams();
+  const history = useHistory();
 
   const [country, setCountry] = useState(null);
   const [topLevelDomain, setTopLevelDomain] = useState('');
@@ -59,7 +60,7 @@ function DetailsContent() {
   return (
     <Container>
       <ContentContainer>
-        <BackButton>
+        <BackButton onClick={() => history.goBack()}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="1x"
