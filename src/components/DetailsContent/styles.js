@@ -11,8 +11,7 @@ export const Container = styled.div`
   color: var(--white);
   background: var(--secondary-dark);
 
-  p,
-  label {
+  p {
     font-size: 1.3rem;
     padding: 0.5rem;
   }
@@ -70,4 +69,14 @@ export const Description = styled.div`
   margin-bottom: 2rem;
 `;
 
-export const Borders = styled.span``;
+export const BordersContainer = styled.div`
+  display: flex;
+`;
+
+export const Border = styled.div`
+  background: var(--primary-dark);
+  border-radius: 5px;
+
+  padding: 1rem;
+  margin-right: 1rem;
+`;

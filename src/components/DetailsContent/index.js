@@ -12,7 +12,8 @@ import {
   Details,
   DescriptionContainer,
   Description,
-  Borders,
+  BordersContainer,
+  Border,
 } from './styles';
 import api from '../../api/api';
 
@@ -24,6 +25,7 @@ function DetailsContent() {
   const [topLevelDomain, setTopLevelDomain] = useState('');
   const [currencies, setCurrencies] = useState('');
   const [languages, setLanguages] = useState('');
+  const [borders, setBorders] = useState('');
 
   useEffect(() => {
     fetchCountryByName();
@@ -51,6 +53,12 @@ function DetailsContent() {
             return language.name;
           })
           .join(', '),
+      );
+
+      setBorders(
+        response.borders.map((border) => {
+          return <Border key={border}>{border}</Border>;
+        }),
       );
     } catch (e) {
       console.error(e);
@@ -87,9 +95,10 @@ function DetailsContent() {
                   <p>Languages: {languages}</p>
                 </Description>
               </DescriptionContainer>
-              <Borders>
-                <label htmlFor="">Border Countries</label>
-              </Borders>
+              <BordersContainer>
+                <p>Border Countries: </p>
+                {borders}
+              </BordersContainer>
             </Details>
           </FlagDetailsContainer>
         )}
