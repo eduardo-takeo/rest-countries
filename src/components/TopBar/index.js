@@ -1,14 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-import { Container, ToggleButton } from './styles'
+import { Container, Title, ToggleButton } from './styles';
+import { useHistory } from 'react-router-dom';
 
 function TopBar() {
+  const history = useHistory();
+
   return (
     <Container>
-      <h1>Where in the world?</h1>
+      <Title onClick={() => history.push('/')}>
+        Where in the world?
+      </Title>
       <ToggleButton>Dark Mode</ToggleButton>
     </Container>
-  )
+  );
 }
 
-export default TopBar
+export default TopBar;

@@ -17,6 +17,10 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
+export const Title = styled.h1`
+  cursor: pointer;
+`;
+
 export const ToggleButton = styled.button`
   font-size: 1rem;
 `;
