@@ -18,7 +18,8 @@ export const Container = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-  width: 70%;
+  width: 80%;
+  max-width: 1280px;
   margin-top: 5rem;
 `;
 
@@ -43,7 +44,8 @@ export const FlagDetailsContainer = styled.div`
 
 export const Image = styled.img`
   width: 45rem;
-  height: 25rem;
+  min-width: 250px;
+  min-height: 200px;
 `;
 
 export const Details = styled.div`
