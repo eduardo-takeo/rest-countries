@@ -9,8 +9,8 @@ export const Container = styled.div`
 
   z-index: 2;
 
-  background-color: var(--primary-dark);
-  color: var(--white);
+  background-color: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
 
   display: flex;
   align-items: center;
@@ -23,4 +23,9 @@ export const Title = styled.h1`
 
 export const ToggleButton = styled.button`
   font-size: 1rem;
+
+  border: none;
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
+  outline: none;
 `;
