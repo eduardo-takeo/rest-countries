@@ -8,8 +8,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  color: var(--white);
-  background: var(--secondary-dark);
+  color: ${(props) => props.theme.text};
+  background: ${(props) => props.theme.secondary};
 
   p {
     font-size: 1.3rem;
@@ -24,8 +24,8 @@ export const ContentContainer = styled.div`
 `;
 
 export const BackButton = styled.button`
-  background: var(--primary-dark);
-  color: var(--white);
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
   border: none;
   border-radius: 5px;
 
@@ -79,7 +79,7 @@ export const BordersContainer = styled.div`
 `;
 
 export const Border = styled.div`
-  background: var(--primary-dark);
+  background: ${(props) => props.theme.primary};
   border-radius: 5px;
   cursor: pointer;
 

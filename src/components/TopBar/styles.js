@@ -28,4 +28,5 @@ export const ToggleButton = styled.button`
   background: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.text};
   outline: none;
+  cursor: pointer;
 `;
