@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { ThemeProvider } from 'styled-components';
 
 import {
   Container,
@@ -14,7 +15,7 @@ import {
 import api from '../../api/api';
 import FlagCard from './FlagCard';
 
-function MainContent() {
+function MainContent({ theme }) {
   const [flags, setFlags] = useState([]);
   const [allFlags, setAllFlags] = useState([]);
 
@@ -56,41 +57,47 @@ function MainContent() {
   };
 
   return (
-    <Container>
-      <FilterContainer>
-        <SearchBar>
-          <FontAwesomeIcon
-            icon={faSearch}
-            size="lg"
-            style={{ margin: '2rem' }}
-          />
-          <SearchInput
-            placeholder="Search for a country..."
-            onChange={(e) => searchForTerm(e.target.value)}
-          />
-        </SearchBar>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <FilterContainer>
+          <SearchBar>
+            <FontAwesomeIcon
+              icon={faSearch}
+              size="lg"
+              style={{ margin: '2rem' }}
+            />
+            <SearchInput
+              placeholder="Search for a country..."
+              onChange={(e) => searchForTerm(e.target.value)}
+            />
+          </SearchBar>
 
-        <RegionFilter
-          name="regionFilter"
-          id="regions"
-          defaultValue="allRegions"
-          onChange={(region) => searchForRegion(region.target.value)}
-        >
-          <option value="allRegions">All regions</option>
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </RegionFilter>
-      </FilterContainer>
+          <RegionFilter
+            name="regionFilter"
+            id="regions"
+            defaultValue="allRegions"
+            onChange={(region) =>
+              searchForRegion(region.target.value)
+            }
+          >
+            <option value="allRegions">All regions</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </RegionFilter>
+        </FilterContainer>
 
-      <FlagsContainer>
-        {flags.map((flag) => {
-          return <FlagCard flag={flag} key={flag.name} />;
-        })}
-      </FlagsContainer>
-    </Container>
+        <FlagsContainer>
+          {flags.map((flag) => {
+            return (
+              <FlagCard theme={theme} flag={flag} key={flag.name} />
+            );
+          })}
+        </FlagsContainer>
+      </Container>
+    </ThemeProvider>
   );
 }
 

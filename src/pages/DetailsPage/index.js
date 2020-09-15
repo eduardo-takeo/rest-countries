@@ -5,11 +5,11 @@ import { Container } from './styles';
 import TopBar from '../../components/TopBar';
 import DetailsContent from '../../components/DetailsContent';
 
-function DetailsPage() {
+function DetailsPage({ theme, toggleTheme }) {
   return (
     <Container>
-      <TopBar />
-      <DetailsContent />
+      <TopBar theme={theme} toggleTheme={toggleTheme} />
+      <DetailsContent theme={theme} />
     </Container>
   );
 }

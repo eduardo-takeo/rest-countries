@@ -5,8 +5,8 @@ export const Container = styled.div`
   min-height: calc(100vh - 6rem);
   height: 100%;
 
-  color: var(--white);
-  background: var(--secondary-dark);
+  color: ${(props) => props.theme.text};
+  background: ${(props) => props.theme.secondary};
 `;
 
 export const FilterContainer = styled.div`
@@ -21,8 +21,8 @@ export const SearchBar = styled.div`
   width: 40rem;
   height: 4rem;
 
-  background: var(--primary-dark);
-  color: var(--white);
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
 
   display: flex;
   align-items: center;
@@ -35,8 +35,8 @@ export const SearchInput = styled.input`
   height: 100%;
   width: 100%;
 
-  background: var(--primary-dark);
-  color: var(--white);
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
 
   border: none;
   border-radius: 0.5rem;
@@ -49,8 +49,8 @@ export const SearchInput = styled.input`
 export const RegionFilter = styled.select`
   padding: 1rem;
 
-  background: var(--primary-dark);
-  color: var(--white);
+  background: ${(props) => props.theme.primary};
+  color: ${(props) => props.theme.text};
 
   border: none;
   border-radius: 0.5rem;

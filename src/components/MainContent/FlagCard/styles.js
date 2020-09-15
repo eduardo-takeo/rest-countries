@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   margin-bottom: 3rem;
 
-  background: var(--primary-dark);
+  background: ${(props) => props.theme.primary};
   border-radius: 1rem;
 
   cursor: pointer;
